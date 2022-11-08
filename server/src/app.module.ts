@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { QuizModule } from './modules/quiz/quiz.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Quiz } from './modules/quiz/quiz.entity';
+import { Question } from './modules/quiz/question.entity';
 
 @Module({
   imports: [QuizModule, TypeOrmModule.forRoot({
@@ -13,7 +14,7 @@ import { Quiz } from './modules/quiz/quiz.entity';
     username: 'postgres',
     password: '1234',
     database: 'quiz',
-    entities: [Quiz],
+    entities: [Quiz, Question],
     synchronize: true,
     // autoLoadEntities: true,
   }),
